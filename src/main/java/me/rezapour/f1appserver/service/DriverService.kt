@@ -1,9 +1,8 @@
 package me.rezapour.f1appserver.service
 
 import me.rezapour.f1appserver.api.F1ApiClient
+import me.rezapour.f1appserver.api.model.DriversResponse
 import org.springframework.stereotype.Service
-import java.sql.Driver
-import java.util.ArrayList
 
 @Service
 class DriverService(
@@ -11,7 +10,7 @@ class DriverService(
 ) {
 //    private val drivers: ArrayList<Driver> = ArrayList()
 
-    fun getDrivers(): String {
-        return api.getDrivers() ?: ""
+    fun getDrivers(): DriversResponse {
+        return api.getDrivers() ?: throw Exception("No Drivers Found!")
     }
 }
