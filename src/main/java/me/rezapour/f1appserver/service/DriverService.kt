@@ -13,10 +13,6 @@ class DriverService(
 //    private val drivers: ArrayList<Driver> = ArrayList()
 
     fun getDrivers(): List<Driver> {
-
-        return if (false)
-            api.getDrivers()?.map { it.toDomain() } ?: throw Exception("No Drivers Found!")
-        else
-            throw F1ApiException(message = "No Drivers Found!")
+        return api.getDrivers()?.map { it.toDomain() } ?: throw Exception("No Drivers Found!")
     }
 }
